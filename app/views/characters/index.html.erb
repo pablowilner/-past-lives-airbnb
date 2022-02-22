@@ -1,3 +1,4 @@
+
 <h1>List of all Characters</h1>
 
 <%= link_to "New Character", new_character_path  %>
@@ -13,3 +14,10 @@
         </div>
     <% end  %>
 </div>
+
+ <%# <% if policy(character).update? %>
+<%# <%= link_to 'Edit', edit_character_path(character) %>
+
+<%# <% if policy(character).create? %>
+  <%# <%= link_to 'New Character', new_character_path %>
+<%# <% end %> 
