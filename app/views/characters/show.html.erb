@@ -5,5 +5,5 @@
     <%= @character.title %>
     <%= @character.description %>
     <%= @character.price %>
-    <%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cloudinary_picture(@character) %>
 </div>
