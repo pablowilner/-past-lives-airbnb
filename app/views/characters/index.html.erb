@@ -1,4 +1,5 @@
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<div class="container">
 <h1>List of all Characters</h1>
 <% if user_signed_in?  %>
 <h1 >Welcome on our platform</h1>
@@ -12,12 +13,12 @@
       <div class="card-product col m-2">
         <%= cloudinary_picture(character) %>
           <div class="card-product-infos">
-            <%= character.title %> <br>
-            <%= character.description %>
-            <p>Product description with <strong>relevant info</strong> only.</p>
+            <h2><%= character.title %></h2>
+            <p><%= character.description%></p>
           </div>
+          <i class="fas fa-heart d-flex align-items-end flex-column padding p-1" style="height: 200px;"></i>
         </div>
-      <% end  %>
+      <% end %>
   </div>
 </div>
 
