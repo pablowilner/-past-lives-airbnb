@@ -15,7 +15,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render "/components/nav-bar" %>
+
+
+<div class="page-container">
+  <%= render "/components/nav-bar" %>
+  <main id="main-content">
     <%= yield %>
+  </main>
+  <%= render "components/footer" %>
+</div>
+
   </body>
 </html>
