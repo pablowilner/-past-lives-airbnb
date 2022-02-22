@@ -18,11 +18,9 @@ class CharactersController < ApplicationController
     authorize @restaurant
     if @character.update(character_params)
       redirect_to character_path(@character)
-      else
+    else
         render :edit
-      end
     end
-
   end
 
   def show
@@ -54,6 +52,4 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:name, :title, :description, :profession, :location, :historical_period, :price)
   end
-
-
 end
