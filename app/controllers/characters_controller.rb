@@ -11,7 +11,6 @@ class CharactersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -36,13 +35,9 @@ class CharactersController < ApplicationController
     end
   end
 
-
-
   def destroy
     @character.destroy
   end
-
-
 
   private
   def set_character
@@ -50,6 +45,6 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :title, :description, :profession, :location, :historical_period, :price)
+    params.require(:character).permit(:name, :title, :description, :profession, :location, :historical_period, :price, :photo)
   end
 end
