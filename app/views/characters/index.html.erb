@@ -1,22 +1,24 @@
 
 <h1>List of all Characters</h1>
-
 <% if user_signed_in?  %>
-  <%= link_to "New Character", new_character_path  %>
+<h1 >Welcome on our platform</h1>
 <% else  %>
   <p>Please <%= link_to "sign in", new_user_session_path %> to create a new character</p>
 <% end %>
 
 <div class="container">
+  <div class="m-3">
     <% @characters.each do |character| %>
-        <div class="card-product">
-            <%= cl_image_tag character.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-product-infos">
-                <%= character.title %>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-            </div>
+      <div class="card-product col m-2">
+        <%= cloudinary_picture(character) %>
+          <div class="card-product-infos">
+            <%= character.title %> <br>
+            <%= character.description %>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
         </div>
-    <% end  %>
+      <% end  %>
+  </div>
 </div>
 
  <%# <% if policy(character).update? %>
