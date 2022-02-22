@@ -1,12 +1,16 @@
 
 <h1>List of all Characters</h1>
 
-<%= link_to "New Character", new_character_path  %>
+<% if user_signed_in?  %>
+  <%= link_to "New Character", new_character_path  %>
+<% else  %>
+  <p>Please <%= link_to "sign in", new_user_session_path %> to create a new character</p>
+<% end %>
 
 <div class="container">
     <% @characters.each do |character| %>
         <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= cl_image_tag character.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
                 <%= character.title %>
                 <p>Product description with <strong>relevant info</strong> only.</p>
@@ -20,4 +24,4 @@
 
 <%# <% if policy(character).create? %>
   <%# <%= link_to 'New Character', new_character_path %>
-<%# <% end %> 
+<%# <% end %>
