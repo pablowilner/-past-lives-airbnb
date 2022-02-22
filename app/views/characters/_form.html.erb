@@ -2,8 +2,8 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :name %>
-        <%= f.input :profession %>
-        <%= f.input :historical_period %>
+        <%= f.input :profession, :collection => %w[Paris London Madrid], :prompt => "Select your preferred location" %>
+        <%= f.input :historical_period, :collection => %w[Paris London Madrid], :prompt => "Choose the historical period" %>
         <%= f.input :location %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
