@@ -1,3 +1,20 @@
+
+<h1>List of all Characters</h1>
+
+<%= link_to "New Character", new_character_path  %>
+
+<div class="container">
+    <% @characters.each do |character| %>
+        <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+                <%= character.title %>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+        </div>
+    <% end  %>
+</div>
+
  <%# <% if policy(character).update? %>
 <%# <%= link_to 'Edit', edit_character_path(character) %>
 

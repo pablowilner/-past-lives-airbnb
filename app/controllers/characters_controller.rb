@@ -11,14 +11,15 @@ class CharactersController < ApplicationController
   end
 
   def edit
+    authorize @character
   end
 
   def update
-    authorize @restaurant
+    authorize @character
     if @character.update(character_params)
       redirect_to character_path(@character)
     else
-        render :edit
+      render :edit
     end
   end
 
@@ -28,18 +29,22 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @character.user = current_user
+    authorize @character
     if @character.save
-      redirect_to character_path(@character)
+      redirect_to character_path(@character.id)
     else
       render :new
     end
   end
 
   def destroy
+    authorize @character
     @character.destroy
   end
 
   private
+
   def set_character
     @character = Character.find(params[:id])
   end
