@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
 
   def index
     @characters = policy_scope(Character)
+    @user = current_user
   end
 
   def new
