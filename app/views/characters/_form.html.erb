@@ -2,9 +2,9 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :name %>
-        <%= f.input :profession, :collection => %w[Football Player, Singer, Dancer ], :prompt => "Select the profession" %>
-        <%= f.input :historical_period, :collection => %w[1950, 2000, 2010], :prompt => "Choose the historical period" %>
-        <%= f.input :location, :collection => %w[1950, 2000, 2010], :prompt => "Choose the historical period" %>
+        <%= f.input :profession, :collection => %w[royalty sports celebrity business scientist heroes artists], :prompt => "Select the profession" %>
+        <%= f.input :historical_period, :collection => %w[middle_age 20th_century ancient_history], :prompt => "Choose the historical period" %>
+        <%= f.input :location, :collection => %w[1950, 2000, 2010], :prompt => "Choose the location" %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
         <%= f.submit "Submit ", class: "btn btn-primary" %>
