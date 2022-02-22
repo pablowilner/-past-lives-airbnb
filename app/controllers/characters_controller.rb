@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
     if @character.update(character_params)
       redirect_to character_path(@character)
       else
-        render :new
+        render :edit
       end
     end
 
@@ -34,7 +34,7 @@ class CharactersController < ApplicationController
     if @character.save
       redirect_to character_path(@character)
     else
-      render :edit
+      render :new
     end
   end
 
