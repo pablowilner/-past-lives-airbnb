@@ -9,5 +9,6 @@ class Character < ApplicationRecord
   validates :historical_period, presence: true, inclusion: { in: %w(middle_age 20th_century ancient_history )}
   # validates :location, presence: true
   validates :price, presence: true
+  validates :photo, presence: true
 
 end
