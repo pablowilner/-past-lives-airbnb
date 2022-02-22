@@ -1,0 +1,9 @@
+<h1>Selected Character (Placeholder) </h1>
+
+<div>
+    <%= @character.name %>
+    <%= @character.title %>
+    <%= @character.description %>
+    <%= @character.price %>
+    <%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
+</div>

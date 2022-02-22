@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
   end
 
   def update
-  end 
+  end
 
   def show
     @character = Character.find(params[:id])
@@ -24,7 +24,6 @@ class CharactersController < ApplicationController
     end
   end
 
-
   def edit
     @character = Character.find(params[:id])
   end
@@ -34,12 +33,10 @@ class CharactersController < ApplicationController
     @character.delete
   end
 
-
-
   private
 
   def character_params
-    params.require(:character).permit(:name, :title, :description, :profession, :location, :historical_period, :price)
+    params.require(:character).permit(:name, :title, :description, :profession, :location, :historical_period, :price, :photo)
   end
 
 
