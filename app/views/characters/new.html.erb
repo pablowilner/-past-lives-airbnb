@@ -1,0 +1,17 @@
+<h1>Create a new Character</h1>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <%= simple_form_for [ @character] do |f| %>
+        <%= f.input :title %>
+         <%= f.input :description %>
+          <%= f.input :name %>
+           <%= f.input :profession %>
+            <%= f.input :historical_period %>
+             <%= f.input :location %>
+              <%= f.input :price %>
+        <%= f.submit "Submit ", class: "btn btn-primary" %>
+      <%  end %>
+    </div>
+    </div>
+  </div>
