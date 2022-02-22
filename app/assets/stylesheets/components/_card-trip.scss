@@ -2,10 +2,13 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 0;
+  height: 400px;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 50%;
   width: 100%;
   object-fit: cover;
 }
@@ -24,16 +27,46 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 24px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  // justify-content: space-between;
+  // align-items: center;
   position: relative;
+  height: 50%;
 }
+
+.even {
+  background-color: #EE8778;
+  color: white;
+  p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+}
+
+.odd {
+  background-color: #F8D47E;
+  color: white;
+  p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+}
+
 
 .card-trip-infos .card-trip-user {
   position: absolute;
-  right: 16px;
+  right: 24px;
   top: -20px;
   width: 40px;
+}
+
+#grid-gap {
+  grid-column-gap: 20px;
 }
