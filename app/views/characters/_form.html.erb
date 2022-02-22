@@ -3,7 +3,7 @@
         <%= f.input :description %>
         <%= f.input :name %>
         <%= f.input :profession, :collection => %w[royalty sports celebrity business scientist heroes artists], :prompt => "Select the profession" %>
-        <%= f.input :historical_period, :collection => %w[middle_age 20th_century ancient_history], :prompt => "Choose the historical period" %>
+        <%= f.input :historical_period, :collection => %w[Ancient _Ages_(Up_to_500) Middle_Ages_(500_1500) Modern_Era_(1500 _1900) Contemporary_History_(1900_Present)], :prompt => "Choose the historical period" %>
         <%= f.input :location, :collection => %w[1950, 2000, 2010], :prompt => "Choose the location" %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
