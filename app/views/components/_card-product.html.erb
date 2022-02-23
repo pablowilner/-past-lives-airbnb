@@ -1,5 +1,6 @@
 <% @characters.each do |character| %>
-  <div class="card-product col mb-2">
+  <%= link_to character_path(character), class: "text-decor" do %>
+  <div class="card-product col mb-2" >
     <%= cloudinary_picture(character) %>
     <div class="card-product-infos">
       <div class="card-product-infos-top">
@@ -20,4 +21,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 <% end %>
