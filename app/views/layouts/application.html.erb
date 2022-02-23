@@ -13,18 +13,14 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-
-<div class="page-container">
-  <%= render "components/nav-bar" %>
-  <%= render 'components/flashes' %>
-  <main id="main-content">
-    <%= yield %>
-  </main>
-  <%= render "components/footer" %>
-</div>
+    <div class="page-container">
+      <%= render "components/nav-bar" %>
+      <%= render 'components/flashes' %>
+      <main id="main-content">
+        <%= yield %>
+      </main>
+      <%= render "components/footer" %>
+    </div>
 
   </body>
 </html>
