@@ -35,6 +35,7 @@ class CharactersController < ApplicationController
 
   def show
     authorize @character
+    @markers = [{ lat: @character.latitude, lng: @character.longitude }]
   end
 
   def create
