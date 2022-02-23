@@ -7,22 +7,11 @@
   <p>Please <%= link_to "sign in", new_user_session_path %> to create a new character</p>
 <% end %>
 
-<div class="container d-flex">
 
-  <div class="container">
-    <div class="m-3">
-      <% @characters.each do |character| %>
-        <div class="card-product col m-2">
-          <%= cloudinary_picture(character) %>
-            <div class="card-product-infos">
-              <h2><%= character.title %></h2>
-              <p><%= character.description%></p>
-            </div>
-            <i class="fas fa-heart d-flex align-items-end flex-column padding p-1" style="height: 200px;"></i>
-          </div>
-        <% end %>
-    </div>
-  </div>
+<div class="container">
+  <div class="m-3">
+        <%= render "components/card-product" %>
+   </div>
 
  <%# <% if policy(character).update? %>
 <%# <%= link_to 'Edit', edit_character_path(character) %>
