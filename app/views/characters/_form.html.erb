@@ -1,11 +1,11 @@
  <%= simple_form_for [ @character] do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :name %>
+        <%= f.input :name, label: "Character's full name" %>
+        <%= f.input :title, label: 'Title of the experience'%>
+        <%= f.input :description, label: 'Description of the experience' %>
         <%= f.input :profession, :collection => %w[royalty sports celebrity business scientist heroes artists], :prompt => "Select the profession" %>
-        <%= f.input :historical_period, :collection => %w[middle_age 20th_century ancient_history], :prompt => "Choose the historical period" %>
-        <%= f.input :location, :collection => %w[1950, 2000, 2010], :prompt => "Choose the location" %>
-        <%= f.input :price %>
+        <%= f.input :historical_period, collection: ["Ancient Ages (Up to 500)", "Middle Ages (500 1500)", "Modern Era (1500 1900)", "Contemporary History (1900 Present)"], :prompt => "Choose the historical period" %>
+        <%= f.input :address, label: 'Location of the experience', :prompt => "Choose the location" %>
+        <%= f.input :price, label: 'Price per day for the experience' %>
         <%= f.input :photo, as: :file %>
         <%= f.submit "Submit ", class: "btn btn-primary" %>
 <%  end %>

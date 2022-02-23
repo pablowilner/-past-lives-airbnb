@@ -4,6 +4,15 @@ class CharactersController < ApplicationController
   def index
     @characters = policy_scope(Character)
     @user = current_user
+
+    @markers = @characters.geocoded.map do |character|
+      {
+        lat: character.latitude,
+        lng: character.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { character: character }),
+        image_url: helpers.asset_url("mind-journey-logo.jpg")
+      }
+    end
   end
 
   def new
