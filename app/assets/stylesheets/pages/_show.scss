@@ -1,0 +1,36 @@
+.show-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.show-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+
+.titles h2 {
+  font-size: 22px;
+  color: $dark-gray;
+  text-align: center;
+}
+
+.titles p {
+  font-size: 18px;
+  color: $gray;
+  text-align: center;
+}
+
+.description p {
+  margin-top: 32px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.icons i {
+  color: $middle-gray;
+}
