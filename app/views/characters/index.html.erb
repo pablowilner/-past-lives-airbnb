@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <div class="container">
-<h1>List of all Characters</h1>
+<h1>Pick a Character</h1>
 <% if user_signed_in?  %>
-<h1 >Welcome on our platform</h1>
+<h1 ></h1>
 <% else  %>
   <p>Please <%= link_to "sign in", new_user_session_path %> to create a new character</p>
 <% end %>
 
 
-<div class="container">
-  <div class="m-3">
+<div class="container d-flex mb-5">
+  <div style="width: 60%" >
         <%= render "components/card-product" %>
    </div>
 
@@ -20,7 +20,7 @@
   <%# <%= link_to 'New Character', new_character_path %>
 <%# <% end %>
 
-  <div style="width: 100%; height: 600px;"
+  <div style="width: 40%; height: 100vh; margin-left: 8px; margin-bottom: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"

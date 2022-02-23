@@ -17,7 +17,7 @@
 }
 
 .card-product h2 {
-  color: blue;
+  color: $blue;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -55,4 +55,11 @@
 .card-product .card-product-infos .card-product-infos-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+h1{
+  color: #6c757d;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font: $headers-font;
 }
