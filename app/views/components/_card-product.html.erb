@@ -5,15 +5,19 @@
     <div class="card-product-infos">
       <div class="card-product-infos-top">
         <div>
-          <p><%= character.title%></p>
-          <h2><%= character.name%></h2>
+          <p><%= character.name%></p>
+          <h2><%= character.title%></h2>
         </div>
 
         <i class="fas fa-heart" ></i>
       </div>
       <div class="card-product-infos-bottom">
-       <p class="profession">Profession: <%= character.profession%></p>
-        <p class="price">Price: <%= character.price%>0€</p>
+      <div class="icons justify-content-evenly">
+        <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= character.price.round %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= character.historical_period %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= character.profession %></p>
+      </div>
+
       </div>
     </div>
   </div>
