@@ -1,8 +1,19 @@
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+<% @characters.each do |character| %>
+  <div class="card-product col m-2">
+    <%= cloudinary_picture(character) %>
+    <div class="card-product-infos">
+      <div class="card-product-infos-top">
+        <div>
+          <p><%= character.title%></p>
+          <h2><%= character.name%></h2>
+        </div>
+
+        <i class="fas fa-heart" ></i>
+      </div>
+      <div class="card-product-infos-bottom">
+       <p class="profession">Profession: <%= character.profession%></p>
+        <p class="price">Price: <%= character.price%>0€</p>
+      </div>
+    </div>
   </div>
-  <i class="fas fa-heart"></i>
-</div>
+<% end %>
