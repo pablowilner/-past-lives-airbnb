@@ -1,9 +1,32 @@
-<h1>Selected Character (Placeholder) </h1>
+<div class="container m-5">
 
-<div>
-    <%= @character.name %>
-    <%= @character.title %>
-    <%= @character.description %>
-    <%= @character.price %>
-    <%= cloudinary_picture(@character) %>
+  <div class="show-all row">
+
+    <div class="text col-6 mt-5 pt-3">
+      <div class="titles">
+        <p><%= @character.name %></p>
+        <h2><%= @character.title %></h2>
+      </div>
+
+      <div class="icons d-flex flex-row bd-highlight m-4 justify-content-evenly">
+        <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= @character.price.round %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= @character.historical_period %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= @character.profession %></p>
+      </div>
+
+      <div class="booking-btn d-flex bd-highlight mb-3 justify-content-center">
+          <%= link_to "Book Now", "#", class: "btn btn-flat  d-inline-flex" %>
+      </div>
+
+      <div class="description">
+        <p><%= @character.description %></p>
+      </div>
+    </div>
+
+    <div class="show-image col-6 d-flex justify-content-center">
+      <%= cloudinary_picture(@character) %>
+    </div>
+
+  </div>
+
 </div>
