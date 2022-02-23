@@ -9,16 +9,7 @@
 
 <div class="container">
   <div class="m-3">
-    <% @characters.each do |character| %>
-      <div class="card-product col m-2">
-        <%= cloudinary_picture(character) %>
-          <div class="card-product-infos">
-            <h2><%= character.title %></h2>
-            <p><%= character.description%></p>
-          </div>
-          <i class="fas fa-heart d-flex align-items-end flex-column padding p-1" style="height: 200px;"></i>
-        </div>
-      <% end %>
+   <%= render "components/card-product" %>
   </div>
 </div>
 
