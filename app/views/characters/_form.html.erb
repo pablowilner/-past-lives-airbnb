@@ -4,7 +4,9 @@
         <%= f.input :description, label: 'Description of the experience' %>
         <%= f.input :profession, :collection => %w[royalty sports celebrity business scientist heroes artists], :prompt => "Select the profession" %>
         <%= f.input :historical_period, collection: ["Ancient Ages (Up to 500)", "Middle Ages (500 1500)", "Modern Era (1500 1900)", "Contemporary History (1900 Present)"], :prompt => "Choose the historical period" %>
-        <%= f.input :address, label: 'Location of the experience', :prompt => "Choose the location" %>
+        <%= f.input :address, label: 'Location of the experience',  :prompt => "Choose the location",
+                      input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+                      wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
         <%= f.input :price, label: 'Price per day for the experience' %>
         <%= f.input :photo, as: :file %>
         <%= f.submit "Submit ", class: "btn btn-primary" %>
