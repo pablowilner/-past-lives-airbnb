@@ -8,7 +8,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <%= form_tag characters_path, class: "search_form", method: :get do %>
+              <div class="d-flex">
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control search_bar",
+                  placeholder: "Start your search"
+                %>
+                <%= button_tag type: 'submit', class: "search_button"  do %>
+                <%= render 'components/svg/search-icon' %>
+                <% end %>
+              </div>
+          <% end %>
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
             <%= link_to "All Characters", characters_path, class: "nav-link" %>
