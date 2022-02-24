@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
     <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "mind-journey-logo.jpg"%>
+      <%= image_tag "mind-journey-logo.png"%>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +34,8 @@
             <%= image_tag "profile-image.jpg", class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
-                <%= link_to current_user.email, "#", class: "dropdown-item" %>
+                <%= link_to current_user.email, "#", class: "dropdown-item", style: "font-weight: bold;" %>
                 <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "My Bookings", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% else %>
                 <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>

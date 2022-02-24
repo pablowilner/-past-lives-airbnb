@@ -18,7 +18,7 @@ class CharactersController < ApplicationController
         lat: character.latitude,
         lng: character.longitude,
         info_window: render_to_string(partial: "info_window", locals: { character: character }),
-        image_url: helpers.asset_url("PinPoint Map.png")
+        image_url: helpers.asset_url("pin-point-map.png")
       }
     end
   end

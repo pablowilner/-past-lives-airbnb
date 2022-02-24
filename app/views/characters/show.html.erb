@@ -2,7 +2,11 @@
 
   <div class="show-all row">
 
-    <div class="text col-6 mt-5 pt-3">
+    <div class="text col-6 pt-3">
+      <div class="icons d-flex flex-row bd-highlight justify-content-end">
+        <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= @character.historical_period %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= @character.profession %></p>
+      </div>
       <div class="titles">
         <p><%= @character.name %></p>
         <h2><%= @character.title %></h2>
@@ -14,12 +18,10 @@
         <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= @character.profession %></p>
       </div>
 
-      <%# <div class="booking-btn d-flex bd-highlight mb-3 justify-content-center">
-          <%= link_to "Book Now", "#", class: "btn btn-flat  d-inline-flex" %>
-      <%# </div> %>
+
      <!-- Button trigger modal -->
 <div class="booking-btn d-flex bd-highlight mb-3 justify-content-center">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-flat-white d-inline-flex" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Book now
 </button>
 </div>
