@@ -1,8 +1,16 @@
 class CharactersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index,:show]
   before_action :set_character, only: %i[ show edit update destroy ]
 
   def index
-    @characters = policy_scope(Character)
+
+    if params[:query].present?
+      @characters = policy_scope(Character).new_search(params[:query])
+    else
+      @characters = policy_scope(Character)
+    end
+
+    # @characters = policy_scope(Character)
     @user = current_user
 
     @markers = @characters.geocoded.map do |character|
@@ -35,7 +43,8 @@ class CharactersController < ApplicationController
 
   def show
     authorize @character
-    @markers = [{ lat: @character.latitude, lng: @character.longitude, image_url: helpers.asset_url("mind-journey-logo.jpg"), info_window: render_to_string(partial: "info_window", locals: { character: @character }) }]
+    @markers = [{ lat: @character.latitude, lng: @character.longitude, image_url: helpers.asset_url("PinPoint Map.png"), info_window: render_to_string(partial: "info_window", locals: { character: @character }) }]
+    @booking = Booking.new
   end
 
   def create
