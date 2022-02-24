@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PastLivesAirbnb</title>
+    <title>Mind Journey</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,16 +13,14 @@
   </head>
 
   <body>
-
+    <%= render "components/nav-bar" %>
+    <%= render 'components/flashes' %>
     <div class="page-container">
-      <%= render "components/nav-bar" %>
-      <%= render 'components/flashes' %>
-      <main id="main-content">
-        <%= yield %>
-      </main>
-      <%= render "components/footer" %>
+
+    <main id="main-content">
+      <%= yield %>
+    </main>
     </div>
-
-
+    <%= render "components/footer" %>
   </body>
 </html>
