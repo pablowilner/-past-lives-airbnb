@@ -18,9 +18,32 @@
         <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= @character.profession %></p>
       </div>
 
-      <div class="booking-btn d-flex bd-highlight mb-3 justify-content-center">
-          <%= link_to "Book Now", "#", class: "btn-flat-white  d-inline-flex" %>
+
+     <!-- Button trigger modal -->
+<div class="booking-btn d-flex bd-highlight mb-3 justify-content-center">
+<button type="button" class="btn btn-flat-white d-inline-flex" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Book now
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <%= simple_form_for [ @character, @booking ], html: {data: {controller: "flatpickr"}} do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} , label: "Your Start date" %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} , label: 'Your End Date'%>
+        <%= f.submit "Enjoy your time ", class: "btn btn-primary justify-content-center" %>
+        <%  end %>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div class="description">
         <p><%= @character.description %></p>
@@ -42,9 +65,3 @@
       class="rounded" ></div>
 </div>
 
-<%= simple_form_for [ @character, @booking ], html: {data: {controller: "flatpickr"}} do |f| %>
-        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} , label: "Your Start date" %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} , label: 'Your End Date'%>
-        <%= f.submit "Book ", class: "btn btn-primary" %>
-
-<%  end %>
