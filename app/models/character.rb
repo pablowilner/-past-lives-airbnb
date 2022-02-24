@@ -12,4 +12,11 @@ class Character < ApplicationRecord
   # validates :address, presence: true
   validates :price, presence: true
   validates :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :new_search,
+    against: [ :title, :description, :profession, :historical_period ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
