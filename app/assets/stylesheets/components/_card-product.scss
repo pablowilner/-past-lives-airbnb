@@ -71,3 +71,11 @@
 .text-decor {
   text-decoration: none;
 }
+
+.card-product:hover {
+  // background-color: #d1d1d1;
+  img {
+    // filter: grayscale(0%);
+    filter: brightness(1.25);
+  }
+}
