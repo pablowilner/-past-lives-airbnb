@@ -43,7 +43,7 @@ class CharactersController < ApplicationController
 
   def show
     authorize @character
-    @markers = [{ lat: @character.latitude, lng: @character.longitude, image_url: helpers.asset_url("PinPoint Map.png"), info_window: render_to_string(partial: "info_window", locals: { character: @character }) }]
+    @markers = [{ lat: @character.latitude, lng: @character.longitude, image_url: helpers.asset_url("pin-point-map.png"), info_window: render_to_string(partial: "info_window", locals: { character: @character }) }]
     @booking = Booking.new
   end
 
