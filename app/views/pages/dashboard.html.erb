@@ -6,7 +6,7 @@
     </div>
     <h2>My Bookings</h2>
     <% @bookings.each do |booking| %>
-      <%= link_to character_path(booking.character), class: "text-decor" do %>
+    <%= render "new_review", booking: booking %>
       <div class="card-product col mb-2" >
         <%= cloudinary_picture(booking.character) %>
         <div class="card-product-infos">
@@ -19,6 +19,9 @@
             <i class="fas fa-heart" ></i>
           </div>
           <div class="card-product-infos-bottom">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= booking.id %>">
+             Leave a Review!
+          </button>
           <div class="icons justify-content-evenly">
             <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price.round %></p>
             <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
@@ -28,6 +31,5 @@
           </div>
         </div>
       </div>
-      <% end %>
     <% end %>
 </div>
