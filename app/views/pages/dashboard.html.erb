@@ -5,4 +5,29 @@
         <%= render "components/card-product" %>
     </div>
     <h2>My Bookings</h2>
+    <% @bookings.each do |booking| %>
+      <%= link_to character_path(booking.character), class: "text-decor" do %>
+      <div class="card-product col mb-2" >
+        <%= cloudinary_picture(booking.character) %>
+        <div class="card-product-infos">
+          <div class="card-product-infos-top">
+            <div>
+              <p><%= booking.character.name%></p>
+              <h2><%= booking.character.title%></h2>
+            </div>
+
+            <i class="fas fa-heart" ></i>
+          </div>
+          <div class="card-product-infos-bottom">
+          <div class="icons justify-content-evenly">
+            <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price %></p>
+            <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
+            <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
+          </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
 </div>
