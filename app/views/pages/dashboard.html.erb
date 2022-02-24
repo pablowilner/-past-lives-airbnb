@@ -20,7 +20,7 @@
           </div>
           <div class="card-product-infos-bottom">
           <div class="icons justify-content-evenly">
-            <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price %></p>
+            <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price.round %></p>
             <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
             <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
           </div>
