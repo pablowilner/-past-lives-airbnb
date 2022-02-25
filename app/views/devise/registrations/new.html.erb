@@ -18,6 +18,18 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
+            <%= f.input :first_name,
+                        required: true,
+                        input_html: { autocomplete: "first-name" } %>
+            <%= f.input :last_name,
+                        required: true,
+                        input_html: { autocomplete: "last-name" } %>
+            <%= f.input :username,
+                        required: true,
+                        input_html: { autocomplete: "username" } %>
+            <%= f.input :photo, as: :file,
+                        required: true,
+                        input_html: { autocomplete: "a photo" } %>
           </div>
 
           <div class="form-actions">
