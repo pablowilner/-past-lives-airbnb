@@ -2,7 +2,7 @@
     <h1>My Dashboard</h1>
     <h2>My Characters</h2>
     <div style="width: 100%" >
-        <%= render "components/card-product" %>
+        <%= render "components/card-dashboard" %>
     </div>
     <h2>My Bookings</h2>
     <% @bookings.each do |booking| %>
@@ -24,6 +24,8 @@
             <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
             <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
           </div>
+
+
 
           </div>
         </div>
