@@ -1,9 +1,12 @@
 <div class="container">
     <h1>My Dashboard</h1>
+    <% if @characters.present? %>
     <h2 class="category-header">My Characters</h2>
     <div style="width: 100%" >
         <%= render "components/card-dashboard" %>
     </div>
+    <% end %>
+    <% if @bookings.present? %>
     <h2 class="category-header">My Bookings</h2>
     <% @bookings.each do |booking| %>
     <%= render "new_review", booking: booking %>
@@ -32,5 +35,6 @@
           </div>
         </div>
       </div>
+    <% end %>
     <% end %>
 </div>

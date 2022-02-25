@@ -72,7 +72,7 @@
 
 <div class="container mb-3" >
   <h2 class="category-header" >Reviews</h2>
-  <% if @character.reviews %>
+  <% if @character.reviews.present? %>
       <div class="container d-flex flex-wrap" id="review-gap">
       <% @character.reviews.each do |review| %>
         <div class="card" style="width: 18rem;">

@@ -4,9 +4,13 @@ import $ from 'jquery';
 
 
 export default class extends Controller {
+  static targets = ["form"]
+
   connect() {
-    document.querySelectorAll('#review_rating').forEach(element =>
-      console.log(element)
-    )
+
+  }
+
+  send(event) {
+    this.formTarget.submit()
   }
 }
