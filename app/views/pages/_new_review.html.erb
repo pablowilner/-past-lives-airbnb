@@ -3,21 +3,23 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Leave a Review!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Leave a Review for <%= booking.character.name %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" data-controller="star">
-      <%= simple_form_for @review, remote: true do |f| %>
+      <div class="modal-stim"data-controller="star">
 
-
+      <div class="modal-body" >
+      <%= simple_form_for @review,
+                      data: { star_target: "form" } do |f| %>
                 <%= f.input :content %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience with the character" %>
                 <%= f.hidden_field :booking_id, value: booking.id %>
       </div>
       <div class="modal-footer">
-        <%= f.submit "Send your review" %>
+        <%= f.submit "Send your review", class: "btn btn-primary", data: { action: "click->star#send" } %>
       </div>
        <% end %>
+       </div>
     </div>
   </div>
 </div>

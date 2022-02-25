@@ -1,9 +1,12 @@
 <div class="container">
     <h1>My Dashboard</h1>
+    <% if @characters.present? %>
     <h2 class="category-header">My Characters</h2>
     <div style="width: 100%" >
         <%= render "components/card-dashboard" %>
     </div>
+    <% end %>
+    <% if @bookings.present? %>
     <h2 class="category-header">My Bookings</h2>
     <% @bookings.each do |booking| %>
     <%= render "new_review", booking: booking %>
@@ -21,8 +24,8 @@
           <div class="card-product-infos-bottom d-flex align-items-end">
               <div class="icons justify-content-evenly">
                 <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price.round %></p>
-                <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
-                <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
+                <p class="p-2 bd-highlight"><i class="fa-solid fa-circle-play"></i><%= booking.start_date %></p>
+                <p class="p-2 bd-highlight"><%= booking.end_date %></p>
               </div>
             <% unless booking.review.present? && booking.review.user == current_user %>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= booking.id %>">
@@ -32,5 +35,6 @@
           </div>
         </div>
       </div>
+    <% end %>
     <% end %>
 </div>
