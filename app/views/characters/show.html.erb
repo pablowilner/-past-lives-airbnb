@@ -57,6 +57,7 @@
   </div>
 
 </div>
+
 <div class="container mb-5 rounded">
     <div style="width: 100%; height: 200px;"
       data-controller="mapbox"
@@ -65,3 +66,10 @@
       class="rounded" ></div>
 </div>
 
+<div class="container" >
+  <% @character.reviews.each do |review| %>
+      <%= review.user.email %>
+      <%= review.content %>
+      <%= review.rating %>
+  <% end %>
+</div>

@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to new_review_path
+      redirect_to character_path(@review.character)
     else
       flash[:alert] = "Something went wrong."
       render :new

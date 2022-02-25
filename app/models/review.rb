@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :booking
-  # belongs_to :character, through: :bookings
+  has_one :character, through: :booking
 end
