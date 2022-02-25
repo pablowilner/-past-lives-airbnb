@@ -1,0 +1,25 @@
+<% @characters.each do |character| %>
+  <div class="card-product col mb-2" >
+    <%= cloudinary_picture(character) %>
+    <div class="card-product-infos">
+      <div class="card-product-infos-top">
+        <div>
+          <p><%= character.name%></p>
+          <h2><%= character.title%></h2>
+        </div>
+
+        <i class="fas fa-heart" ></i>
+      </div>
+      <div class="card-product-infos-bottom d-flex align-items-end">
+          <div class="icons justify-content-evenly">
+            <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= character.price.round %></p>
+            <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= character.historical_period %></p>
+            <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= character.profession %></p>
+          </div>
+          <div class="btn btn-primary">
+              <%= link_to "Edit your Character", edit_character_path(character) if policy(character).update? %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>
