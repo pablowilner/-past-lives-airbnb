@@ -5,7 +5,7 @@
     <div class="card-product-infos">
       <div class="card-product-infos-top">
         <div>
-          <p><%= character.name%></p>
+          <p id="name__card"><%= character.name%></p>
           <h2><%= character.title%></h2>
         </div>
 
@@ -13,9 +13,9 @@
       </div>
       <div class="card-product-infos-bottom">
       <div class="icons justify-content-evenly">
-        <p class="p-2 bd-highlight"><i class="fas fa-euro-sign icono"></i> <%= character.price.round %></p>
-        <p class="p-2 bd-highlight"><i class="fas fa-landmark icono"></i> <%= character.historical_period %></p>
-        <p class="p-2 bd-highlight"><i class="fas fa-theater-masks icono"></i> <%= character.profession %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-euro-sign" id="icono"></i> <%= character.price.round %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-landmark" id="icono"></i> <%= character.historical_period %></p>
+        <p class="p-2 bd-highlight"><i class="fas fa-theater-masks" id="icono"></i> <%= character.profession %></p>
       </div>
 
       </div>
