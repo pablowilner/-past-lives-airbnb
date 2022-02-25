@@ -75,7 +75,7 @@
   <% if @character.reviews.present? %>
       <div class="container d-flex flex-wrap" id="review-gap">
       <% @character.reviews.each do |review| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 400px;">
           <div class="card-body">
             <h5 class="card-title"><%= review.user.email %></h5>
             <h6 class="card-subtitle mb-2 text-muted"> <%= review.rating %></h6>
@@ -85,6 +85,6 @@
       <% end %>
       </div>
   <% else %>
-      <h2>Book now and live the first review</h2>
+      <h2 style="">Book now and leave the first review</h2>
   <% end %>
 </div>
