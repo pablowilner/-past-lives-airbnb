@@ -66,10 +66,25 @@
       class="rounded" ></div>
 </div>
 
-<div class="container" >
-  <% @character.reviews.each do |review| %>
-      <%= review.user.email %>
-      <%= review.content %>
-      <%= review.rating %>
+<div>
+
+</div>
+
+<div class="container mb-3" >
+  <h2>Reviews</h2>
+  <% if @character.reviews %>
+      <div class="container d-flex flex-wrap" id="review-gap">
+      <% @character.reviews.each do |review| %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= review.user.email %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> <%= review.rating %></h6>
+            <p class="card-text"><%= review.content %></p>
+          </div>
+        </div>
+      <% end %>
+      </div>
+  <% else %>
+      <h2>Book now and live the first review</h2>
   <% end %>
 </div>
