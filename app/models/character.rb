@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   has_many :bookings
+  has_many :reviews, through: :bookings
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :name, presence: true

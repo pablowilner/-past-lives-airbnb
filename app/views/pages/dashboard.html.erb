@@ -6,7 +6,7 @@
     </div>
     <h2>My Bookings</h2>
     <% @bookings.each do |booking| %>
-      <%= link_to character_path(booking.character), class: "text-decor" do %>
+    <%= render "new_review", booking: booking %>
       <div class="card-product col mb-2" >
         <%= cloudinary_picture(booking.character) %>
         <div class="card-product-infos">
@@ -18,16 +18,19 @@
 
             <i class="fas fa-heart" ></i>
           </div>
-          <div class="card-product-infos-bottom">
-          <div class="icons justify-content-evenly">
-            <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price.round %></p>
-            <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
-            <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
-          </div>
-
+          <div class="card-product-infos-bottom d-flex align-items-end">
+              <div class="icons justify-content-evenly">
+                <p class="p-2 bd-highlight"><i class="fas fa-euro-sign"></i> <%= booking.total_price.round %></p>
+                <p class="p-2 bd-highlight"><i class="fas fa-landmark"></i> <%= booking.start_date %></p>
+                <p class="p-2 bd-highlight"><i class="fas fa-theater-masks"></i> <%= booking.end_date %></p>
+              </div>
+            <% unless booking.review.present? && booking.review.user == current_user %>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= booking.id %>">
+                  Leave a Review!
+                </button>
+            <% end %>
           </div>
         </div>
       </div>
-      <% end %>
     <% end %>
 </div>
