@@ -6,8 +6,10 @@
         <h5 class="modal-title" id="exampleModalLabel">Leave a Review!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-              <%= simple_form_for @review, remote: true do |f| %>
+      <div class="modal-body" data-controller="star">
+      <%= simple_form_for @review, remote: true do |f| %>
+
+
                 <%= f.input :content %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience with the character" %>
                 <%= f.hidden_field :booking_id, value: booking.id %>
