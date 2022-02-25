@@ -39,3 +39,8 @@
 .icons i {
   color: $middle-gray;
 }
+
+#review-gap {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
